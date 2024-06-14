@@ -1,6 +1,7 @@
 import express from "express";
 import { isAdmin, requireSignIn } from "../Middlewares/AuthMiddleware.js";
 import {
+  categoryWiseProductController,
   createProductController,
   deleteProductController,
   getAllProductControlller,
@@ -60,5 +61,8 @@ router.get("/search-product/:keyword", searchProductController);
 
 //related product
 router.get("/related-product/:pid/:cid", realtedProductController);
+
+//Category wise product
+router.get("/category-wise-product/:slug", categoryWiseProductController);
 
 export default router;
